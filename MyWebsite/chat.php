@@ -10,9 +10,6 @@
 </head>
 <script>
 
-function randomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 function scrollBottom() {window.scrollTo(0, 99999);}
 if (document.addEventListener) document.addEventListener("DOMContentLoaded", scrollBottom, false)
 else if (window.attachEvent) window.attachEvent("onload", scrollBottom);
@@ -50,7 +47,6 @@ function rainbw() {
     document.getElementById("textbox").style.filter = "brightness(80%)";
     document.getElementById("SendBtn").style.animation = TheColor;
     document.getElementById("SendBtn").style.filter = "brightness(70%)";
-
     document.getElementById("Home").style.animation = TheColor;
     document.getElementById("Help").style.animation = TheColor;
     document.getElementById("Rules").style.animation = TheColor;
@@ -85,7 +81,6 @@ function ColorAll(TheColor) {
     document.getElementById("textbox").style.filter = "brightness(80%)";
     document.getElementById("SendBtn").style.background = TheColor;
     document.getElementById("SendBtn").style.filter = "brightness(70%)";
-
     document.getElementById("Home").style.background = TheColor;
     document.getElementById("Help").style.background = TheColor;
     document.getElementById("Rules").style.background = TheColor;
@@ -110,25 +105,10 @@ function ColorAll(TheColor) {
         document.getElementById("Backgrounds").style.color = "black";
         document.getElementById("textbox").style.color = "black";
         document.getElementById("Hamb").style.textShadow = "0px -6.6px 0px black";
-
     } 
 }
 function init(){
-    
-    if (getCookie("TxtBoxes") == "") {
-        setCookie("TxtBoxes", [], 30);
-        setCookie("TxtBoxesValues", [], 30);
-    }
 
-    var TxtAr = JSON.parse("[" + JSON.stringify(getCookie("TxtBoxes").substring(1).split(',')) + "]");
-    var ValAr = JSON.parse("[" + JSON.stringify(getCookie("TxtBoxesValues").substring(1).split(',')) + "]");
-
-    console.log(TxtAr);
-    console.log(ValAr);
-
-    for (let index = 0; index < TxtAr[0].length; index++) {
-        DisplayTextbox(TxtAr[0][index], ValAr[0][index]);
-    }
 
     if (getCookie("BgColor") != "none") {
         ColorAll(getCookie('BgColor'));
@@ -181,117 +161,6 @@ function getCookie(cname) {
     }
   }
   return "";
-}
-
-function SaveText(DivType) {
-    let aaaa = document.getElementById("SaveText" + DivType).value;
-    console.log(aaaa);
-
-    var TxtAr = JSON.parse("[" + JSON.stringify(getCookie("TxtBoxes").substring(1).split(',')) + "]");
-    var ValAr = JSON.parse("[" + JSON.stringify(getCookie("TxtBoxesValues").substring(1).split(',')) + "]");
-
-    nm = TxtAr[0].indexOf(DivType);
-
-    console.log("VAL DOWN");
-    console.log(ValAr);
-
-    ValAr[0][nm] = aaaa;
-
-    console.log("VAL UP");
-    console.log(ValAr);
-
-
-    setCookie("TxtBoxesValues", ValAr, 30);
-
-}
-function DisplayTextbox(Rn, val) {
-
-    var box = document.createElement('div');
-    box.className = "Window-wrapper";
-    box.setAttribute("id", "BOX" + Rn);
-    
-    var c1 = document.createElement("div");
-    c1.setAttribute("class", "Window-selector");
-    c1.setAttribute("style", "background: rgb(237, 106, 94);");
-    var ch1 = document.createElement("h6");
-    ch1.setAttribute("style", "font-size: 15px; transform: rotate(45deg); margin-bottom: 49.4px; left: 3.1px; cursor:pointer;");
-    ch1.setAttribute("onclick", "BOX" + Rn + ".remove();")
-    ch1.textContent = "+";
-    c1.appendChild(ch1);
-
-    var c2 = document.createElement("div");
-    c2.setAttribute("class", "Window-selector");
-    c2.setAttribute("style", "background: rgb(245, 189, 79); margin-left:31px;");
-    var ch2 = document.createElement("h6");
-    ch2.textContent = "-";
-    c2.appendChild(ch2);
-
-    var c3 = document.createElement("div");
-    c3.setAttribute("class", "Window-selector");
-    c3.setAttribute("style", "background: rgb(98, 195, 84); margin-left:51.5px;");
-    var ch3 = document.createElement("h6");
-    ch3.setAttribute("style", "transform: rotate(-45deg); font-size: 12px; margin-bottom: 50.7px; left: 4.2px;");
-    ch3.textContent = "↕";
-    c3.appendChild(ch3);
-
-    var he2 = document.createElement("h2");
-    he2.setAttribute("style", "position: absolute; bottom: 110px; left:230px; color:white; font-size: 20px; cursor: pointer; filter:brightness(50%);");
-    aafafafa = "SaveText('" + Rn + "')";
-    he2.setAttribute("onclick", aafafafa);
-    he2.textContent = "Spara";
-    box.appendChild(he2);
-
-    var txta = document.createElement("textarea");
-    txta.setAttribute("placeholder", "Skriv noteringar här...");
-    txta.setAttribute("spellcheck", "false");
-    txta.setAttribute("type", "text");
-    txta.setAttribute("class", "Window-textbox");
-    txta.setAttribute("id", "SaveText" + Rn);
-    if(val != ""){
-        txta.value = val;
-    }else{
-        txta.value = "";
-    }
-
-    box.appendChild(txta);
-    box.appendChild(c1);
-    box.appendChild(c2);
-    box.appendChild(c3);
-
-    document.body.appendChild(box);
-    
-    var m = document.getElementById('BOX' + Rn);
-    m.addEventListener('mousedown', mouseDown, false);
-    window.addEventListener('mouseup', mouseUp, false);
-
-    function mouseUp() {
-        window.removeEventListener('mousemove', move, true);
-    }
-
-    function mouseDown(e) {
-        window.addEventListener('mousemove', move, true);
-    }
-
-    function move(e) {
-        m.style.top = e.clientY - 80 + 'px';
-        m.style.left = e.clientX - 150 + 'px';
-    };
-    return Rn
-}
-function CreateTextbox() {
-    let Rn = randomInteger(1, 100000);
-
-    DisplayTextbox(Rn, "");
-
-    a = getCookie("TxtBoxes").split(",");
-    b = getCookie("TxtBoxesValues").split(",");
-
-    a.push("DIV" + Rn);
-    b.push("aijwaiojwdojawoiaowjaoijwdojawoijojojojoj")//(document.getElementById("SaveText" + Rn).value);
-    setCookie("TxtBoxes", a, 30);
-    setCookie("TxtBoxesValues", b, 30);
-    console.log(getCookie("TxtBoxes"));
-    console.log(getCookie("TxtBoxesValues"));
 }
 
 
@@ -364,7 +233,7 @@ function PutComment($stringa, $color){
         global $colors;
         $CurrentIPcolor = str_replace("\r\n","",$colors[array_rand($colors)]);
         $stringa = str_replace("\r\n","<br>",$stringa);
-        file_put_contents($file, "<div class='textbox' style='background: linear-gradient(to right, $CurrentIPcolor 10px, white 11px) !important;'><h3>", FILE_APPEND);
+        file_put_contents($file, "<div class='textbox' style='background: linear-gradient(to right, $CurrentIPcolor 10px, white 10px) !important;'><h3>", FILE_APPEND);
         file_put_contents($file, str_replace("\r\n"," ",$stringa), FILE_APPEND);
         file_put_contents($file, "</h3><div style='background-color: $CurrentIPcolor;' class='chat-thing'></div></div>", FILE_APPEND);
         AddTime("<h5>" . date("Y-m-d") . "‹›" . date("H:i") . "</h5>\n");
@@ -382,7 +251,7 @@ if(strpos(strtolower($comment), "bollar") !== false){
 if(substr($comment, 0, 4) == "gif:"){
     $gif = strval(substr($comment, 4, strlen($comment) - 1));
     $CurrentIPcolor = str_replace("\r\n","",$colors[array_rand($colors)]);
-    file_put_contents($file, "<div class='textbox' style='background: linear-gradient(to right, $CurrentIPcolor 9.8px, white 9.801px) !important;'><a target='_blank' href='$gif'><button class='gifBtn'><img class='GifOrImage' width='200' height='150' src=", FILE_APPEND);
+    file_put_contents($file, "<div class='textbox' style='background: linear-gradient(to right, $CurrentIPcolor 9.8px, white 9.8px) !important;'><a target='_blank' href='$gif'><button class='gifBtn'><img class='GifOrImage' width='200' height='150' src=", FILE_APPEND);
 
     $gif = '"' . str_replace("\r\n","",$gif) . '">';
 
@@ -393,7 +262,7 @@ if(substr($comment, 0, 4) == "gif:"){
 else if(substr($comment, 0, 4) == "vid:"){
     $video = strval(substr($comment, 4, strlen($comment) - 1));
     $CurrentIPcolor = str_replace("\r\n","",$colors[array_rand($colors)]);
-    file_put_contents($file, "<div class='textbox' style='background: linear-gradient(to right, $CurrentIPcolor 9.8px, white 9.801px) !important;'><a target='_blank' href='$video'><button class='gifBtn'><iframe width='200' height='150' class='video-player' src=", FILE_APPEND);
+    file_put_contents($file, "<div class='textbox' style='background: linear-gradient(to right, $CurrentIPcolor 9.8px, white 9.8px) !important;'><a target='_blank' href='$video'><button class='gifBtn'><iframe width='200' height='150' class='video-player' src=", FILE_APPEND);
     $video = '"' . str_replace("\r\n","",$video);
     $video = substr_replace($video, "embed/", 25, 25) . substr($video, 33, strlen($video)-1);
 
@@ -405,7 +274,7 @@ else if(substr($comment, 0, 4) == "jam:"){
     $audio = strval(substr($comment, 4, strlen($comment) - 1));
     $audioType = substr($audio, strlen($audio) - 3, strlen($audio) - 1);
     $CurrentIPcolor = str_replace("\r\n","",$colors[array_rand($colors)]);
-    file_put_contents($file, "<div class='textbox' style='background: linear-gradient(to right, $CurrentIPcolor 9.8px, white 9.801px) !important;'><audio controls id='musik'><source src='$audio' type='audio/$audioType'><div style='background-color: $CurrentIPcolor;' class='chat-thing'></div>", FILE_APPEND);
+    file_put_contents($file, "<div class='textbox' style='background: linear-gradient(to right, $CurrentIPcolor 9.8px, white 9.8px) !important;'><audio controls id='musik'><source src='$audio' type='audio/$audioType'><div style='background-color: $CurrentIPcolor;' class='chat-thing'></div>", FILE_APPEND);
     $video = '"' . str_replace("\r\n","",$video);
     file_put_contents($file, $video, FILE_APPEND);
     file_put_contents($file, '</div></audio>', FILE_APPEND);
@@ -454,7 +323,6 @@ echo "</div>";
 <div id="Loader" class="LoaderBG" style="text-align: center;"><p id="LoaderText" style="margin-right: 215px; margin-top:15%; font-weight: 100; font-size: 120px;">Loading Resources...</p><p id="LoaderText" style="margin-right: 215px; margin-top:-3%; font-weight: 100; font-size: 40px;"><br>This Might Take A Second</p></div>
 <div class="Loader"></div>
 <div class="navigation-bar" id="navbg"><a href="tutorial.html"><button class="navigation-button" tabindex="1" id="Home">Hem</button></a><a href="tutorial.html"><button class="navigation-button" tabindex="2" id="Help">Bruksanvisning</button></a><a href="regler.html"><button class="navigation-button" tabindex="3" id="Rules">Regler</button></a>
-<button class="navigation-button" onclick="CreateTextbox()">TEXTRUTA</button>
 <button class="color-button" id="Backgrounds">Bakgrunder<div class="dropdown-content"><span>
 <div class="Color-holder">
 <div2 class="color-bubble" style="background: rgb(62, 124, 177);" onclick="background('rgb(62, 124, 177)')"></div2>

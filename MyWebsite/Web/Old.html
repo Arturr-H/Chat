@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./Old.css" />
+        <link rel="icon" type="image/gif" href="./Images/favicon/Highres.png">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;600&display=swap" rel="stylesheet"> 
+
+        <title id="titletext">
+            Artur.reddi
+        </title>
+    </head>
+    <body style="background: rgb(44, 44, 50);">
+
+        <div id="Everything">
+
+            <div id="AllBox" style="position: relative; left: 0%; display: inline-block; background: yellow; border-radius: 25px;">
+
+
+                <div id="all" class="all" style="scale: 1.1;">
+                    <h1 class="Center Title">
+                        Artur.<span style="color: rgb(227, 46, 46);">red</span>
+                    </h1>
+
+
+                    <div class="Block Center" id="CoolBg">
+                        <p class="Cw pInt">en gång när jag skulle gå och basta så såg jag en sak som fick mig att skratta och blablabla jag vet inte vad jag ska skriva.</p>
+                    </div>
+
+
+                    <div class="Block Center">
+                        <p class="Cw pInt">
+                            Här är en annan cool text som man kan kolla på eftersom den är mycket cool. Vad mer ska man skriva? jag har inga fler idéer tyvärr. Kanske en text som någon läser till slutet? nääääää det skulle inte fungera.
+                        </p>
+                        <div class="Scroll">
+                            <a href="./Games/Gurka.html">
+                                <div class="Box">
+                                    Gurka
+                                    <img src="./Images/Gurka.png" />
+                                
+                                </div>
+                            </a>
+                            <a href="./Old/chat.php">
+                                <div class="Box">
+                                    Chat<br /><br />
+                                    Chatta anonymt!
+                                
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <p>hej</p>
+                </div>
+                <bigBr></bigBr>
+                
+                <div style="padding: 100px; position: relative;">
+                    <h1 class="Center Title">
+                        Artur.<span style="color: rgb(227, 46, 46);">red</span>
+                    </h1>
+
+
+                    <p style="color: rgb(91, 84, 84);">hejsan jag gillar att baka kaka med en soppa som heter morot och som kan spela bsket med en femåring som gillar att skaka på korgar som inte har mjöl i sig och en dag när en sak skulle hände så fick en man i stockholm en present från kungen som innehöll en morotskaka som han åt upp på dirren.</p>
+                    <p style="color: black;">hejsan jag gillar att baka kaka med en soppa som heter morot och som kan spela bsket med en femåring som gillar att skaka på korgar som inte har mjöl i sig och en dag när en sak skulle hände så fick en man i stockholm en present från kungen som innehöll en morotskaka som han åt upp på dirren.</p>
+                    <p style="color: black;">hejsan jag gillar att baka kaka med en soppa som heter morot och som kan spela bsket med en femåring som gillar att skaka på korgar som inte har mjöl i sig och en dag när en sak skulle hände så fick en man i stockholm en present från kungen som innehöll en morotskaka som han åt upp på dirren.</p>
+                    <p style="color: black;">hejsan jag gillar att baka kaka med en soppa som heter morot och som kan spela bsket med en femåring som gillar att skaka på korgar som inte har mjöl i sig och en dag när en sak skulle hände så fick en man i stockholm en present från kungen som innehöll en morotskaka som han åt upp på dirren.</p>
+
+                    <bigBr></bigBr>
+                </div>
+
+
+            </div>
+            <p style="color: white;" id="TextFill"></p>
+
+
+            <bigBr></bigBr><bigBr></bigBr><bigBr></bigBr>
+        </div>
+
+        <script>
+            function TitleAnimation() {
+                let text = ["ARTUR.RED", "aRTUR.RED", "arTUR.RED", "ArtUR.RED", "ARtuR.RED", "ARTur.RED", "ARTUr.RED", "ARTUR.rED", "ARTUR.reD", "ARTUR.Red", "ARTUR.REd", "ARTUR.RED", "ARTUR.RED", "ARTUR.REd", "ARTUR.Red", "ARTUR.reD", "ARTUR.rED", "ARTUr.RED", "ARTur.RED", "ARtuR.RED", "ArtUR.RED", "arTUR.RED", "aRTUR.RED", "ARTUR.RED", "ARTUR.RED", "ARTUR.RED", "ARTUR.RED", "ARTUR.RED", "ARTUR.RED", "ARTUR.RED", "ARTUR.RED", "ARTUR.RED", "ARTUR.RED", "ARTUR.RED", "ARTUR.RED", "ARTUR.RED", "ARTUR.RED"];
+                let index = 0;
+                let title = document.getElementById("titletext");
+                setInterval(() => {
+                    title.innerHTML = text[index]
+                    if (index >= text.length-1) {
+                        index = 0
+                    }else{
+                        index++;
+                    }
+                    
+                }, 100);
+            }
+            let tempStr = "";
+            let r = ["med", "att", "en", "sak", "som", "kan", "efter", "den", "personen", "killen", "tjejen", "hälsar", "på", "varför", "alla", "fiskar", "när", "hatar", "kommer", "äta", "springa", "efter", "som gillar", "äter", "hoppar", "bestämmer", "erövrar", "rumänien", "sverige", "tyskland", "usa", "kommer att", "och", "med", "och", "senare", "slukar", "hatar", "gillar", "festar"];
+            for (let index = 0; index < 1000; index++) {
+                tempStr += r[parseInt(Math.random() * r.length)] + " "
+            }
+            document.getElementById("TextFill").innerHTML = tempStr
+
+            TitleAnimation();
+
+            document.addEventListener("scroll", scroll);
+            let all = document.getElementById("all")
+            let allBox = document.getElementById("AllBox")
+            let Everything = document.getElementById("Everything");
+            let AllBoxDist = 1900;
+            let dist = 100
+            function scroll() {
+
+                if (scrollY >= dist) {
+                    all.style.transform = "scale(" + (dist/10 / 1/scrollY*10) + ") translateY(" + (scrollY-dist)*2 + "px)"
+                }else{
+                    all.style.transform = "scale(1)";
+                }
+    
+                if (scrollY >= AllBoxDist) {
+                    allBox.style.transform = "scale(" + (AllBoxDist/10 / 1/scrollY*10) + ") translateY(" + (scrollY-AllBoxDist)*2 + "px)"
+                }else{
+                    allBox.style.transform = "scale(1)";
+                }
+            }
+        </script>
+    </body>
+</html>

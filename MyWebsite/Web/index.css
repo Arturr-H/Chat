@@ -1,0 +1,382 @@
+:root{
+    --DarkBg: rgb(0, 0, 0);
+    --Text: rgb(120, 120, 120);
+    --MainColor: rgb(236, 48, 48);
+    --Btext: white;
+    --Red: rgb(236, 48, 48);
+    --BG: white;
+    --BW: black;
+
+    --test: rgb(61, 77, 216);
+}
+
+iframe{
+
+    box-shadow: 2vmax 2vmax 3vmax rgba(0, 0, 0, 0.308);
+}
+
+
+/*#### HTML ELEMENTS ####*/
+/*#### HTML ELEMENTS ####*/
+/*#### HTML ELEMENTS ####*/
+#hov:hover{
+    filter: brightness(90%);
+}
+#hov:active{
+    filter: brightness(70%);
+    transform: translate(-50%, 10px);
+}
+
+input[type="checkbox"]{
+    display: inline-block;
+    appearance: none;
+    position: relative;
+    margin: 0%;
+    padding: 3vmax;
+    background: var(--MainColor);
+}input[type="checkbox"]:checked{
+    background: var(--MainColor);
+}input[type="checkbox"]:checked::before{
+    content: "";
+    padding: 2.7vmax;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+    background: var(--BG);
+}
+
+html{
+    overflow-x: hidden;
+    background: white;
+    overscroll-behavior: contain;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    margin: 0;
+    height: 100%;
+}body{
+    margin: 0;
+    padding-top: 1%;
+}
+img{
+
+    position: relative;
+    width: 60%;
+    outline: 0.1vmax solid var(--DarkBg);
+    outline-offset: 1vmax;
+}
+p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 4vmin;
+    
+    color: var(--Text);
+    width: 65%;
+    position: relative;
+}
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 10vmin;
+
+    color: rgb(59, 59, 67);
+}a{
+    color: rgb(37, 37, 186);
+    text-decoration: rgb(37, 37, 186) solid underline 0.05vmax;
+}iframe{
+    border: none;
+    outline: none;
+    position: relative;
+    display: inline-block;
+    width: 35vmax;
+    height: 15vmax;
+}
+brl{
+    display: block;
+    position: relative;
+    padding: 10px;
+    left: 0%;
+    width: 100%;
+    margin-bottom: 20vmin;
+    visibility: hidden;
+}
+*::selection{
+
+    color: white;
+    background: black;
+
+}.all{
+    padding-bottom: 0vmax;
+}
+cr{
+    animation: blink 1.5s step-start 0s infinite;
+}textarea{
+    transform: skew(-15deg), translateX(-50%) !important;
+    padding: 1vmax;
+    resize: none;
+    border: none;
+    outline: none;
+    width: 40vmax;
+    height: 15vmax;
+    background: var(--MainColor);
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 4vmin;
+    
+    color: var(--Btext);
+    width: 65%;
+    position: relative;
+}
+button{
+    outline: none;
+    border: none;
+    background: transparent;
+
+    transition: all 0.1s;
+}button>div:hover{
+    filter: invert(), brightness(80%);
+    background: var(--MainColor);
+    transform: skew(-18deg) translate(0.075vmax, -0.9vmax);
+}button>div:active{
+    background: rgb(189, 35, 35);
+    transform: skew(-18deg) translate(0.0125vmax, -0.225vmax);
+}
+
+
+
+
+/*#### DEFAULT CLASSES ####*/
+/*#### DEFAULT CLASSES ####*/
+/*#### DEFAULT CLASSES ####*/
+
+
+.InpP{
+    transform: skew(-15deg), translateX(-50%) !important;
+    padding: 1vmax;
+    resize: none;
+    border: none;
+    outline: none;
+    width: 40vmax;
+    height: 2vmax;
+    background: var(--MainColor);
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-size: 4vmin;
+    
+    color: var(--Btext);
+    width: 65%;
+    position: relative;
+}
+
+
+.Center{
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/*#### CLASSES ####*/
+/*#### CLASSES ####*/
+/*#### CLASSES ####*/
+
+
+.DarkModeBtn{
+    transition: all 0.1s;
+    position: fixed;
+    right: 1vmax;
+    top: 1vmax;
+    padding: 2vmax;
+    background: var(--MainColor);
+    border-radius: 50%;
+    z-index: 5;
+    border: none;
+    outline: 0.1vmax var(--DarkBg) solid;
+}.DarkModeBtn:hover{
+    transform: scale(0.9);
+}.DarkModeBtn:active{
+    transform: scale(0.7);
+    filter: brightness(50%);
+}
+.Scroll{
+    width: 100%;
+    padding-top: 0%;
+    padding: .4vmax;
+    height: max-content;
+
+    display: inline-flex;
+    position: relative;
+    background-color: var(--DarkBg);
+
+    overflow-x: scroll;
+    overscroll-behavior: contain;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}.Scroll>a>div>div{
+    background: var(--Red);
+    color: var(--BW);
+}
+
+.Scroll>a:last-child{
+    margin-right: 5.8vmax;
+}
+.Scroll>a:first-child{
+    margin-left: 5.8vmax;
+}
+.ImageText{
+    position: absolute;
+    bottom: 8px;
+    left: 22%;
+    font-size: 8vmin;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-style: italic;
+
+    color: rgba(255, 255, 255, 0.35);
+}
+.Box{
+    position: relative;
+    height: 100%;
+    width: 15vmax;
+    background: rgb(236, 48, 48);
+    border-radius: 0.4vmax;
+
+    margin-left: 0.8vmax;
+    font-size: 1.4vmax;
+    word-wrap: break-word;
+    min-width: 15vmax;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    color: var(--Btext);
+}
+.Bbox{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-size: 4vmin;
+    width: 65%;
+    position: relative;
+    color: var(--Btext);
+    background: var(--DarkBg);
+    width: max-content;
+    padding: 1vmin 6vmin;
+
+    display: inline-block;
+    margin-left: 0.3vmax;
+    margin-bottom: 0vmax;
+    margin-right: 0.3vmax;
+    margin-top: 0vmax;
+    transform: skew(-18deg);
+    transition: transform 0.1s, background 0.1s;
+
+    outline: var(--DarkBg) solid 0.2vmax;
+
+}.Gbox{
+    position: relative;
+    width: 20%;
+    display: inline-block;
+    height: 30vmax;
+    background:  var(--DarkBg);
+    margin-left: 0.3vmax;
+    margin-right: 0.3vmax;
+    min-width: 35vmax;
+    margin-bottom: 4.8vmax;
+    text-align: left;
+
+}.Gbox::after{
+    content: '';
+    right: -3vmax;
+    bottom: -3vmax;
+    position: absolute;
+    padding: 3vmax;
+    background: var(--BG);
+    transform: rotate(45deg);
+
+}
+.CloseBtn{
+    cursor: pointer;
+    content: '';
+    right: -0.6vmax;
+    top: -0.6vmax;
+    position: absolute;
+    padding: 1vmax;
+    opacity: 0.02;
+    filter: brightness(90%);
+    background: var(--MainColor);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+.CloseBtn:hover{
+    filter: brightness(70%);
+
+}
+
+.Gbox>span{
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 7vmax;
+    position: absolute;
+    bottom: 100%;
+    left: 5%;
+    transform: translateY(50%) skew(-15deg);
+    color: transparent;
+    background: linear-gradient(to bottom, var(--DarkBg) 50%, var(--BG) 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}.Gbox>p{
+    left: 5%;
+    margin-top: 5vmax;
+    position: absolute;
+    font-size: 2vmax;
+    width: 90%;
+    color: var(--Btext);
+}
+.BboxP{
+    width: max-content;
+    display: inline-block;
+    margin-bottom: 1vmax;
+}
+.BboxP[id="a"]:hover .Bbox{
+    background: rgb(205, 40, 40);
+}.BboxP[id="a"]:active .Bbox{
+    background: rgb(189, 35, 35);
+}
+.BboxP[id="b"]:hover .Bbox{
+    transform: skew(-18deg) translate(0.075vmax, -0.9vmax);
+    background: rgb(236, 48, 48);
+}.BboxP[id="b"]:active .Bbox{
+    background: rgb(189, 35, 35);
+    transform: skew(-18deg) translate(0.0125vmax, -0.225vmax);
+}
+/*#### KEYFRAMES ####*/
+/*#### KEYFRAMES ####*/
+/*#### KEYFRAMES ####*/
+
+@keyframes blink {
+    50% {
+      opacity: 0.0;
+    }
+}
+
+/*#### INTROS #####*/
+/*#### INTROS #####*/
+/*#### INTROS #####*/
+
+@keyframes IntroFade {
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}

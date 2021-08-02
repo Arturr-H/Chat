@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@700&family=Roboto:ital,wght@0,100;1,100&display=swap" rel="stylesheet"> 
+
+        <link rel="stylesheet" href="./new.css">
+        <meta charset="UTF-8">
+
+        <title>Website</title>
+
+
+        <link rel="icon" type="image/png" href="../Images/favicon/Highres.png">
+        <meta name="description" content="Artur red's new Game. Gurka.red! Entertaining and very <em>cool</em>.">
+
+
+        <meta name="keywords" content="Gurka red">
+        <meta property="og:title" content="Gurka.red">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Artur.red">
+    </head>
+    <body>
+        <h1 id="title" class="TextCenter">Artur.<span style="color: #F33636;">red</span><span><img id="titleLogo" src="../Images/favicon/Highres.png" style="height: 7vmin; margin-left: 2vmin;"/></span></h1>
+
+        <p class="TextCenter" id="NameText"></p>
+
+
+        <div id="BG" class="BG"></div>
+        <input id="name" class="NameBox" placeholder="Namn..." maxlength="15" type="text" /><br />
+        <button id="NameBtn" class="Button" onclick="Load()">Spela!</button>
+        <img id="Fire" class="Fire" src="../Images/Fire.gif" />
+        <button id="Gurka" class="Cucumber" onclick="Gurka()"><img draggable="false" style="width: 26vmax;" src="../Images/Gurka.png"/></button>
+
+        <p id="GurkaScoreLabel" class="TextCenter">Score</p>
+
+        <button onclick="sbmt()" class="Button" style="z-index: 1; top: 50px;">Submit score!</button>
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+        <script src="./new.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/faunadb@latest/dist/faunadb-min.js"></script>
+        <script>
+            console.log(getCookie("User"))
+            if (getCookie("User") != "") {
+                let Name = getCookie("User")
+                document.getElementById("name").remove();
+                document.getElementById("NameBtn").remove();
+                document.getElementById("BG").remove();
+                document.getElementById("NameText").innerHTML = "Hejsan, " + Name
+                st();
+            }
+            function Load() {
+
+                let Name = document.getElementById("name").value
+                if (Name.length >= 2) {
+                    document.getElementById("name").remove();
+                    document.getElementById("NameBtn").remove();
+                    document.getElementById("BG").remove();
+                    document.getElementById("NameText").innerHTML = "Hejsan, " + Name
+                    setCookie("User", Name, 100);
+                    st();
+                }
+            }
+            function sbmt() {
+                let Name = getCookie("User")
+
+                var faunadb = window.faunadb
+                var q = faunadb.query
+                
+                var serverClient = new faunadb.Client({
+                secret: 'fnAEKuqzuwACBcehmLnXpljSzUgdvfbS9e_MwlTv',
+                })
+
+                serverClient.query(
+                    q.Create(
+                    q.Collection('TopPlayers'),
+                    { data: { Score: parseInt(CurrentSpin / 100), PlayerName: Name } },//Score: parseInt(CurrentSpin / 100), PlayerName: Name
+                    ),
+
+                )
+                .then((ret) => window.open("./Results.html", "_self"))
+
+            }
+
+
+        </script>
+    </body>
+</html>

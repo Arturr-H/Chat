@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html style="background: black; padding-top: 2vmax;">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="icon" type="image/png" href="../Images/favicon/Highres.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+
+    <meta name="description" content="Terminal filled with amazing commands!">
+
+
+    <meta name="keywords" content="Commands, Terminal">
+    <meta property="og:title" content="Artur.red">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Artur.red">
+    <title>Artur Terminal</title>
+</head>
+<body>
+    <!-- <div class="backg"></div> -->
+    <p id="inp">Welcome! 'Help' for help<br /><z id='z'></z></p>
+    
+
+
+    <script src="./Terminal.js"></script>
+</body>
+
+<style>
+    @font-face {
+        font-family: myFirstFont;
+        src: url(../fonts/pixelmix.ttf);
+    }
+    *{
+        margin: 0px;
+    }
+
+    p{
+        color: greenyellow;
+        margin-left: 2vmax;
+        font-size: 50px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        font-style: normal;   
+    }
+    z{
+        background: greenyellow;
+        margin-left: 7px;
+        padding: 8px;
+        height: 35px;
+        display: inline-block;
+        animation: blink-animation 1.5s steps(2, start) infinite;
+    }
+    @keyframes blink-animation {
+        to {
+            visibility: hidden;
+        }
+    }
+</style>
+
+</html>

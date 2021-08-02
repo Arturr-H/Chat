@@ -1,0 +1,108 @@
+/*####   HTML WIDGETS   ####*/
+html{
+    overflow-x: hidden;
+}
+h1{
+    font-size: 10vmin;
+    font-family: 'Hind', sans-serif;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 2vmax;
+    font-style: italic;
+    width: 70%;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}*{
+    touch-action:none;
+}
+
+/*####   CLASSES   ####*/
+
+.TextCenter{
+    text-align: center;
+}
+.Cucumber{
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    border: none;
+    outline: none;
+    background: transparent;
+}.NameBox{
+    padding: 10px;
+    border-radius: 30px;
+    padding-left: 30px;
+    position: relative;
+    left: 50%;
+    font-size: 40px;
+    font-weight: 100;
+    width: 20vmax;
+    height: 5vmax;
+    transform: translateX(-50%);
+    border: none;
+    outline: none;
+    background: tomato;
+    z-index: 101;
+}.Button{
+    
+
+    padding: 10px;
+    border-radius: 30px;
+    position: relative;
+    left: 50%;
+    font-size: 40px;
+    font-weight: 100;
+    width: 16vmax;
+    height: 4vmax;
+    transform: translateX(-50%);
+    border: none;
+    outline: none;
+    background: tomato;
+    z-index: 101;
+    bottom: 150px;
+    color: rgb(62, 62, 62);
+}.Button:hover{
+    background: rgb(234, 88, 63);
+
+}
+.BG{
+    padding-left: 100px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    overflow: hidden;
+    z-index: 100;
+    filter: blur(2px);
+}.Fire{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -5;
+    top: -30px;
+    width: 29vmax;
+    filter: blur(15px);
+    animation: Rotate 2s linear infinite;
+    opacity: 0;
+}
+@keyframes Rotate {
+    from{
+        transform: translateX(-50%) rotate(0deg);
+    }to{
+        transform: translateX(-50%) rotate(360deg);
+
+    }
+}@keyframes FadeIn{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}

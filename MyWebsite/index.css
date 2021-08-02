@@ -1,0 +1,74 @@
+:root{
+    --Link-color: rgb(0, 0, 0);
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 7vmax;
+    text-align: center;
+}
+
+
+bl{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.5vmax;
+}
+
+.Navbar{
+    transition: top 0.3s;
+    width: 100%;
+    padding-top: 1.2vmax;
+    padding-bottom: 1.2vmax;
+    position: fixed;
+    top: 0%;
+}.Navbar>a{
+
+    padding-left: 2vmax;
+    padding-right: 2vmax;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--Link-color);
+    text-decoration: solid underline var(--Link-color) 0.3px;
+}.Navbar>a:hover{
+    text-decoration: solid underline var(--Link-color) 1px;
+}
+@media only screen and (max-width: 800px) {
+    .Navbar{
+        text-align: center;
+    }
+    .Navbar>a{
+        padding-left: 3vmax;
+        padding-right: 3vmax;
+
+    }
+}
+
+
+.ImageHolder{
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+
+.Background{
+    display: block;
+    position: absolute;
+
+    width: 100%;
+    z-index: -1;
+    margin: 0%;
+    padding: 0%;
+    top: 0%;
+
+}
+
+
+@media only screen and (max-width: 1500px) {
+    .Background{
+        width: 100vmax;
+    }
+}

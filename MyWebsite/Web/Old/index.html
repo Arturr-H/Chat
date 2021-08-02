@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="icon" type="image/gif" href="./Images/favicon/Highres.png">
+            <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png">
+            <meta property="og:description" content="Cool website with amazing content i promise you" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+        <title>Artur red Lounge</title>
+        <meta name="description" content="Cool website with amazing content i promise you">
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="Chat.css">
+        <meta charset="utf-8">
+        <meta charset="UTF-8">
+    </head>
+    <style>
+        .titlefont{
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 2px;
+        }
+    </style>
+    <body>
+        <h1 style="left: 0;line-height: 200px;margin-top: 250px;position: relative;text-align: center;top: 30%;width: 100%; font-size: 100px;" class="titlefont"><span id="#Artur">Artur</span><span class="Dot">.</span><span style="color: #F33636;" class="redSak">re<span>d<img class="drip" src="Images/Drip.gif" width="15.5" /></span>        <span><img class="logo" src="./Images/favicon/Highres.png" /></span>
+        </span><span><br><h3 class="Intro" style="color: black; font-weight: 200; font-size: 30px; margin-bottom: 100px; color:black;"><a href="chat.php">Chat</a> - <a href="Notes.php">Notes</a> - <a href="https://github.com/Arturr-H/Chat" target="_blank">GitHub</a> - <a href="Aktier.html">A</a></h3></span></h1>
+        <div class="Center arrow" style="font-size: 30px;"> 
+            <p id="Outputttt">▾ scroll ▾</p>
+        </div>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+        <h1 id="hejsan" class="arturredtitle rellax" data-rellax-speed="-7" style="bottom: -1600px; position: absolute;">Hejsan</h1>
+        <h1 id="hejsan1" class="arturredtitle rellax" data-rellax-speed="-7" style="bottom: -950px; position: absolute; font-size: 50px;">Det är ditt namn</h1>
+
+
+        <div data-rellax-speed="-5" class="rellax mmm"><div class="RedBox o3"></div></div>
+
+        <div data-rellax-speed="-2" class="rellax mmm"><div style="top: 1500px; width: 5vmax; height: 5vmax;" class="RedBox o1"></div></div>
+        <div data-rellax-speed="-4" class="rellax mmm"><div class="RedBox o2"></div></div>
+        <div data-rellax-speed="-2.1" class="rellax mmm"><div class="RedBox o3"></div></div>
+
+        <div data-rellax-speed="-2.6" class="rellax mmm"><div class="RedBox o1"></div></div>
+        <div data-rellax-speed="-7" class="rellax mmm"><div class="RedBox o2"></div></div>
+        <div data-rellax-speed="3.2" style="top: 3000px;" class="rellax mmm"><div style="top: 1500px; width: 9vmax; height: 9vmax;" class="RedBox o4"></div></div>
+
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+        <h1 id="dissolve" style="left: 0;line-height: 200px;margin-top: 250px;position: relative;text-align: center;top: 30%;width: 100%; font-size: 100px; color: white;"><span id="#Artur">Artur</span><span class="BlackDot">.</span><span style="color: #F33636;" class="redSak">red</span></h1>
+        <div class="whiteBG">
+            <h4>Hejsan, <span name="Namn"></span>. <span id="textgen"></span>
+            </h4>
+            <img src="https://thispersondoesnotexist.com/image" style="width: 30vmax; border-radius: 20px; display: inline-block; white-space: 10px;"/>
+            <img src="https://thispersondoesnotexist.com/image" style="width: 30vmax; border-radius: 20px; display: inline-block; white-space: 10px;"/>
+            <img src="https://thispersondoesnotexist.com/image" style="width: 30vmax; border-radius: 20px; display: inline-block; white-space: 10px;"/>
+
+            <div id="spinner" class="Spinner"></div>
+            <div id="PGBAR" class="PgBar"></div>
+            <div id="PGBARBG" class="PgBarBG"></div>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+        <script src="./randomSeed.js"></script>
+
+        <script>
+            let Name = "";
+            function readTextFile(file, line)
+            {
+                var rawFile = new XMLHttpRequest();
+                rawFile.open("GET", file, false);
+                rawFile.onreadystatechange = function ()
+                {
+                    if(rawFile.readyState === 4)
+                    {
+                        if(rawFile.status === 200 || rawFile.status == 0)
+                        {
+                            var allText = rawFile.responseText;
+                            Name = (allText.split("\n")[parseInt(line)]);
+                        }
+                    }
+                }
+                rawFile.send(null);
+            }
+
+            function r(a) {
+                return a[parseInt(Math.random() * a.length)]
+            }function ranNamn(){
+                readTextFile("./Namn.txt", parseInt(Math.random() * 1391) + 1)
+
+                return Name
+            }function Land() {
+                return r(["Sverige", "Tyskland", "Arabien", "Syrien", "Kina", "USA", "Storbrittanien", "Frankrike"])
+            }function PersonLand() {
+                return r(["arab", "svensk", "tysk", "kines", "fransman", "engelsman"])
+            }
+            function saveUsr(){
+                let b = navigator.webdriver
+                let c = navigator.language
+                let d = navigator.languages
+                let e = navigator.product
+                let f = navigator.platform
+                let g = screen.width + screen.height
+                let i = navigator.appName
+
+                
+                let res = b+c+d+e+f+g+i + "fqaaaaaaaagss gaak"
+                Math.seedrandom(res);
+                document.getElementById("Outputttt").innerHTML = "User ID: " + parseInt(Math.random(1, 1000) * 1000)
+
+                readTextFile("./Namn.txt", parseInt(Math.random() * 1391) + 1)
+
+                document.getElementById("hejsan").innerHTML = Name
+
+                document.getElementsByName("Namn").forEach(element => {
+                    element.innerHTML = Name
+                });
+
+                let a = document.getElementById("textgen");
+
+                let Tt = "Du är en "
+
+                Tt += r(["vältränad", "äcklig", "smart", "stark", "svettig", "fet", "överviktlig", "smutsig", "fin", "galant", "cool", "het", "underbar", "tveksam", "efterbliven", "bortglömd", "efterlyst"]) + " och "
+                Tt += r(["illa luktande", "dum", "smal", "hungrig", "biffig", "ful", "smaklös", "komisk", "glad", "spinkig", "knasig"]) + " människa, du brukar ofta "
+                Tt += r(["gå och simma", "äta", "svimma", "dö", "förlora på spel", "vinna", "vara hemma ensam", "hata på folk", "gilla tv serien friends", "plugga mycket", "träna", "bli mobbad", "käka " + r(["glass", "leksaker", "skalade tomater", "chips"]), "kolla på youtubern " + r(["MrBeast", "Amongus Man", "KSI", "Paulo roberto"])]) + " eftersom "
+                Tt += r(["din mamma", "du", "din kompis"]) + " "
+                Tt += r(["sparkar på", "åt upp", "hatar", "älskar", "gömmer sig för", "är blyg inför", "pratar spanska med"]) + " "
+                Tt += r(["Nationella proven", "hamburgare", "myggor", "sommarlov", "mormor", "träningen", "din mammas " + r(["kompis", "flickvän", "kollega", "chef"])]) + r([" som "])
+                Tt += r(["din mormor", "din pappa", r(["deras", "våran", "min", "Paulo robertos", "din mammas"]) + " släkt", "någons hund", "ett par handskar", "gordon ramsay", "någons katt"]) + " "
+                Tt += r(["faktiskt hatade", "gav till dig", "letade efter", "hade tappad bort", "saknade", "hatade", "skippade", "åt upp", "absorberade", "slog ner", "slickade på", "var kär i", "smakade på"]) + ". "
+                Tt += "Vi hörde att du också " + r(["inte gillar att ", "gillar att ", "älskar att ", "hatar att "]) + r(["bada", "springa", "jogga", "träna", "spela", "baka", "förlora", "vara dryg", "fiska", "löka"]) + " " + r(["utan", "med"]) + " "
+                Tt += r(["fötter", "badkläder", "glasögon", "fidget spinners", "bilmotorer", "din telefon", "cocktails", "dina vänner", "din familj", "din enda kompis"]) + ", eftersom "
+                Tt += r(["en gång när du var liten och", "du istället väljer att äta " + r(["fötter", "lök", "myror från skogen", "gordon ramsays hamburgare", "på McDonalds", "snabbmat", "ICA"]) + " vilket ledde till att", "du inte har några vänner efter att"]) + " "
+                Tt += r(["Johanna", "Markus", "Artur", "Din mamma", "din pappa", "din " + r(["ungerska", "svenska", "engelska", "tyska", "arabsika"]) + " " + r(["pojkvän", "flickvän"])]) + " "
+                Tt += r(["slog dig", "skadade din familj", "åt upp dina rester ifrån igår", "inte sa hejdå till dig " + r(["idag", "igår", "den 27 juni"]), "valde att resa bort utan dig", "inte gillade dig", "sålde din själ för " + r(["5kr", "18,52kr", "5lax"]) + " på " + r(["ebay", "amazon", "svarta marknaden"])]) + ", så "
+                Tt += r(["valde du", "bestämmde du dig för"]) + " att " + r(["slå ner en " + r(["gurka", "arab", "korvkiosk", "kruka"]) + " ifrån " + r(["kina", "arabien", "sverige", "USA"]), "kittla en " + r(["amerikan", "kines", "arab", "svensk", "norsk"]), "sälja din själ till en " + r(["amerikan", "kines", "arab", "svensk", "norsk"]) + " för " + r(["5kr", "14lax", "ett par mynt", "en snygg glass"]), "skjuta dig själv", "gifta dig med en " + PersonLand()]) + ". <br /><br />"
+
+
+                Tt += "En " + r(["kvinna", "man", "pojke", "flicka"]) + " från " + Land() + " " + r(["älskar", "hatar", "gillar"]) + " dig, " + Name
+                a.innerHTML = Tt
+
+            }
+
+            saveUsr()
+
+
+            var rellax = new Rellax('.rellax'); 
+            let a = document.getElementById("hejsan");
+            let a1 = document.getElementById("hejsan1");
+            let prgBar = document.getElementById("PGBAR")
+            let aa = document.getElementById("dissolve");
+            let logo = document.getElementById("logo");
+            let spinner = document.getElementById("spinner")
+            let pgbarbg = document.getElementById("PGBARBG")
+            document.addEventListener("scroll", hejj);
+            let dist = 8200
+            function hejj() {
+                a.style.left = (scrollY / 220) - 5 + "%";
+                a1.style.left = (scrollY / 220) - 5 + "%";
+                spinner.style.transform = "translateX(-150%) rotate(" + scrollY/10 + "deg)"
+                if (scrollY >= 5000) {
+                    document.body.style.background = "rgba(0, 0, 0, " + (scrollY - 5000) / 3000 + ")";
+                }else{
+                    document.body.style.background = "rgb(255, 255, 255)"
+                }if (scrollY >= dist){
+                    aa.style.letterSpacing = parseInt(scrollY - dist) / 12 + "px"
+                    // aa.style.filter = "blur(" + parseInt(scrollY - dist) / 15 + "px)";
+                }
+                spinner.style.top = scrollY - 10750 + "px"
+                if (scrollY >= 10700) {
+                    spinner.style.opacity = (scrollY - 10700) / 2000
+                    pgbarbg.style.opacity = (scrollY - 10700) / 2000
+                    prgBar.style.padding = "1.5vmax " + (scrollY-10700) / 100 + "px"
+                }else{
+                    spinner.style.opacity = 0
+                    pgbarbg.style.opacity = 0
+                    prgBar.style.padding = "0px 0px"
+                }
+                // }if (scrollY >= 9500){
+                //     document.body.style.background = "red"
+                // }
+            }
+            function hej() {
+                return "BÖG"
+            }
+        </script>
+    </body>
+
+</html>

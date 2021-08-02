@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Grattis</title>
+    </head>
+    <body>
+
+        <h1 id="Plabel"></h1>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/faunadb@latest/dist/faunadb-min.js"></script>
+
+        <script>
+            var faunadb = window.faunadb
+            var q = faunadb.query
+
+            var serverClient = new faunadb.Client({
+            secret: 'fnAEKuqzuwACBcehmLnXpljSzUgdvfbS9e_MwlTv',
+            })
+
+            let refs = serverClient.query(q.Paginate(q.Match(q.Index('playersByName'))))
+            const bigQuery = refs.data.map((ref) => q.Get(ref))
+            let allDocuments = serverClient.query(bigQuery)
+            console.log('@allDocuments: ', allDocuments);
+        </script>
+    </body>
+</html>

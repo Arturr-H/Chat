@@ -1,0 +1,165 @@
+/*### DEFAULT ###*/
+/*### DEFAULT ###*/
+/*### DEFAULT ###*/
+
+.Center{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: block;
+}.i{
+    font-style: italic;
+}
+
+/*### HTML WIDGETS ###*/
+/*### HTML WIDGETS ###*/
+/*### HTML WIDGETS ###*/
+html{
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+img{
+    width: 70%;
+    position: relative;
+}
+p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-size: 2vmax;
+    margin-left: 45px;
+    margin-right: 45px;
+    color: rgb(44, 44, 50);
+    padding-bottom: 2vmax;
+    width: 90%;
+}
+.pInt{
+    animation: IntroText 2s ease-in-out forwards;
+}
+bigBr{
+    display: block;
+    position: relative;
+    padding: 10px;
+    left: 0%;
+    width: 100%;
+    margin-bottom: 20vmin;
+    visibility: hidden;
+}a{
+    text-decoration: none;
+}
+
+/*### CLASSES ###*/
+/*### CLASSES ###*/
+/*### CLASSES ###*/
+.all{
+    padding-bottom: 20ch;
+    margin-bottom: 100px;
+    background: white;
+    box-shadow: 2vmax 2vmax 0px 1vmax black, -2vmax -2vmax 0px 1vmax black, -2vmax 2vmax 0px 1vmax black, 2vmax -2vmax 0px 1vmax black;
+}
+.Title{
+    font-family: 'Poppins', sans-serif;    
+    font-weight: 600;
+    font-size: 10vmin;
+    color: rgb(44, 44, 50);
+    animation: IntroTitle 1s ease-in-out forwards;
+}
+.Block{
+    width: 90%;
+    height: fit-content;
+
+    padding-top: 1px;
+
+    background: rgb(44, 44, 50);
+    border-radius: 1vmax;
+    text-align: left;
+    box-shadow: inset 15px 15px 30px rgba(0, 0, 0, 0.407), inset -15px -15px 30px rgba(0, 0, 0, 0.407);
+    display: block;
+    position: relative;
+
+    animation: IntroSlideIn 2s ease-in-out forwards;
+}.Cw{
+    color: white;
+}.Scroll{
+    width: 100%;
+    height: 7vmax;
+    background: rgba(0, 0, 0, 0.25);
+    position: relative;
+    border-radius: 0px 0px 1vmax 1vmax;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    padding-top: 0.8vmax;
+    padding-bottom: 0.8vmax;
+    display: block;
+    overscroll-behavior: contain;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    display: inline-flex;
+}
+
+.Scroll>div:last-child{
+    margin-right: 0.8vmax;
+}
+.Box{
+    position: relative;
+    height: 100%;
+    width: 7vmax;
+    background: rgb(227, 46, 46);
+    border-radius: 0.4vmax;
+
+    margin-left: 0.8vmax;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1vmax;
+    color: white;
+    word-wrap: break-word;
+    text-align: center;
+    min-width: 7vmax;
+}
+
+/*#### KEYFRAMES ####*/
+/*#### KEYFRAMES ####*/
+/*#### KEYFRAMES ####*/
+
+
+
+
+
+
+
+
+
+
+/*#### INTRO KEYFRAMES ####*/
+/*#### INTRO KEYFRAMES ####*/
+/*#### INTRO KEYFRAMES ####*/
+
+
+
+@keyframes IntroTitle {
+    from{
+        font-size: 1vmin;
+    }to{
+        font-size: 10vmin;
+    }
+}@keyframes IntroSlideIn{
+    from{
+        left: -50%;
+    }
+    to{
+        left: 50%;
+    }
+}@keyframes IntroText{
+    0%{
+        color: transparent;
+    }
+    50%{
+        color: transparent;
+    }100%{
+        color: white;
+    }
+}

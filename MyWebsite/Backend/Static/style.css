@@ -1,0 +1,278 @@
+/* VARIABLES */
+/* VARIABLES */
+/* VARIABLES */
+
+:root{
+    --Text-Color: rgb(30, 30, 30);
+    --Default-Skew: -20deg;
+    --Contrast-Color: rgb(232, 61, 61);
+}
+body{
+    scrollbar-color: black;
+}
+body::-webkit-scrollbar{
+    width: 1vmax;
+}body::-webkit-scrollbar-track{
+    background: black;
+}body::-webkit-scrollbar-thumb{
+    background: blue;
+}
+
+/* HTML WIDGETS */
+/* HTML WIDGETS */
+/* HTML WIDGETS */
+
+html{
+    overflow-x: hidden;
+}
+h6{
+    color: var(--Text-Color);
+
+    width: 80%;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1vmax;
+}
+p{
+    color: var(--Text-Color);
+
+    width: 80%;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 3vmax;
+}
+a{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 3vmax;
+    color: rgb(44, 44, 234);
+    text-decoration: rgb(44, 44, 234) 0.07vmax solid underline;
+    cursor: pointer;
+}
+bl{
+    font-weight: 500;
+}bl:hover{
+    font-weight: 700;
+}
+
+h1{
+    color: var(--Text-Color);
+
+    width: 80%;
+    margin-top: 7vmin;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 6vmax;
+}h1::before{
+    transform-origin: 300px center;
+    content: "";
+
+    padding: 0.4vmax;
+    width: 0vmax;
+
+    bottom: 0vmax;
+    left: 50%;
+    transform: translateX(-50%) skew(var(--Default-Skew));
+
+    background: linear-gradient(to right, black 58%, var(--Contrast-Color) 58%);
+    position: absolute;
+
+    animation: IntroWidth 1s ease-in-out forwards;
+}
+
+button{
+    transition: padding 0.1s;
+    border: none;
+    outline: none;
+    background: var(--Text-Color);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 3vmax;
+    padding: 0.2vmax 3vmax;
+}button:hover{
+    padding: 0.2vmax 4vmax;
+}button:active{
+    filter: brightness(80%);
+    padding: 0.2vmax 1vmax;
+}
+
+img{    
+    transition: filter 0.1s;
+
+    border-radius: 0.5vmax;/* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
+
+    padding: 0vmax 0.07vmax;
+
+    height: 20vmax;
+    display: inline-block;
+    vertical-align: top;/* OM MAN INTE HAR DET SÅ BLIR DET KONSTIG MARGIN UNDER BILDERNA (OM BILDEN HAR INLINE-BLOCK) */
+}
+brl{
+    padding: 0.4vmax;
+    width: 17vmax;
+    display: block;
+    margin: 5vmax 0vmax;
+
+    left: 50%;
+    transform: translateX(-50%) skew(var(--Default-Skew));
+
+    /* background: var(--Contrast-Color); */
+    position: relative;
+}
+/* DEFAULT WIDGETS */
+/* DEFAULT WIDGETS */
+/* DEFAULT WIDGETS */
+
+.Center{
+    position: relative;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center;
+}
+.Skew{
+    transform: translateX(-50%) skew(var(--Default-Skew));
+}
+.Half{
+    top: 0%;
+    width: 30vmax;
+    margin: 1.5vmax;
+    display: inline-block;
+}
+.ImgText{
+    transition: opacity 0.5s, bottom 0.4s, color 0.5s;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    color: transparent;
+    bottom: 80%;
+    width: 100%;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 2vmax;
+
+    opacity: 0;
+}
+.ImageHolder{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 0%;
+    margin: 0%;
+}
+
+.ImageHolderButton{
+    
+    transition: all 0.1s;
+    content: "+";
+    padding: 1vmax;
+    padding-top: 0.35vmax;
+    padding-bottom: 0.5vmax;
+    padding-right: 1vmax;
+    font-size: 1.5vmax;
+    position: absolute;
+    z-index: 110;
+    margin-left: calc(100% - 2.98vmax);
+    color: white;
+    border-radius: 0px 0px 0px 1vmax;
+    user-select: none;
+    overflow: hidden;
+
+    font-weight: 700;
+}
+.ImageHolder:hover .ImageHolderButton:hover{
+    background: rgb(255, 255, 255);
+    color: black;
+}
+.ImageHolder:hover .ImageHolderButton:active{
+    background: rgb(230, 230, 230);
+    color: black;
+}
+
+.ImageHolder:hover img{
+    filter: brightness(50%);
+
+}
+.ImageHolder:hover .ImgText{
+    opacity: 1;
+    bottom: 50%;
+    color: white;
+}
+
+/* CLASSES */
+/* CLASSES */
+/* CLASSES */
+
+.Block{
+    width: max-content;
+    height: max-content;
+    width: max-content;
+    overflow-x: scroll;
+    max-width: 90%;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    border-top: .4vmax black solid;
+    border-bottom: .4vmax black solid;
+    border-left: .4vmax black solid;
+    border-right: .4vmax black solid;
+
+    margin: 0%;
+    background: black;
+    white-space: nowrap;
+    border-radius: 0.75vmax;/* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
+
+}.Block>p{
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 1.2vmax;
+
+    color: white;
+}
+
+.Dot{
+    background: linear-gradient(to right, black 50%, var(--Contrast-Color) 50%);
+    background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+}
+.Collection>div{
+    margin: 1vmax;
+    display: inline-block;
+}
+
+.AddDeleteButton{
+    display: block;
+    animation: PlusRotate 0.05s ease-in-out forwards;
+}
+
+/* KEYFRAME ANIMATIONS */
+/* KEYFRAME ANIMATIONS */
+/* KEYFRAME ANIMATIONS */
+
+@keyframes PlusRotate {
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(-45deg);
+    }
+}
+
+/* KEYFRAME INTROS */
+/* KEYFRAME INTROS */
+/* KEYFRAME INTROS */
+
+@keyframes IntroWidth {
+    from{
+        width: 0vmax;
+    }to{
+        width: 35vmax;
+    }
+}

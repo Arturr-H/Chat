@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <canvas id="viewport" width="1000" height="700"></canvas>
+        <script>
+            window.onload = function() {
+                // Get the canvas and context
+                var canvas = document.getElementById("viewport"); 
+                var context = canvas.getContext("2d");
+            
+                // Define the image dimensions
+                var width = canvas.width;
+                var height = canvas.height;
+            
+                // Create an ImageData object
+                var imagedata = context.createImageData(width, height);
+            
+                // Create the image
+                function createImage(offset) {
+                    for (var x=0; x<width; x++) {
+                        for (var y=0; y<height; y++) {
+
+                            var pixelindex = (y * width + x) * 4;
+            
+                            // Generate a xor pattern with some random noise
+                            var red = ((x+offset) % 256) ^ ((y+offset) % 256);
+                            var green = ((2*x+offset) % 256) ^ ((2*y+offset) % 256);
+                            var blue = 50 + Math.floor(Math.random()*100);
+
+            
+                            // Set the pixel data
+                            imagedata.data[15] = red;     // Red
+                            imagedata.data[15+1] = green; // Green
+                            imagedata.data[15+2] = blue;  // Blue
+                            imagedata.data[15+3] = 255;   // Alpha
+                        }
+                    }
+                }
+            
+                // Main loop
+                function main(tframe) {
+
+                    createImage(Math.floor(tframe / 10));
+
+                    context.putImageData(imagedata, 0, 0);
+                }
+            
+                // Call the main loop
+                main(0);
+            };
+        </script>
+    </body>
+</html>
